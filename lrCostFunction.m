@@ -41,9 +41,10 @@ reg_term_0 = (lambda / (2*m) ) * theta( 2:end)'*  theta(2:end);
 
 J = 1/(m)*(-y'*log(h) - (1-y)'*log(1-h)) + reg_term_0;
 
-grad =  (1/m) * X' * (sigmoid(X*theta) - y) + reg_term_2;
 
-temp = theta
+grad =  (1/m) * X' * (h - y);
+
+temp = theta;
 temp(1) = 0;
 reg_term_2 = (lambda / m) * temp;
 reg_term_2(1) = 0;
